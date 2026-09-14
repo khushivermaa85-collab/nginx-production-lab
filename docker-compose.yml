@@ -15,8 +15,6 @@ services:
     build: ./frontend
     container_name: frontend-prod
     restart: unless-stopped
-    ports:
-      - "8081:80"
     networks:
       - devops-network
 
