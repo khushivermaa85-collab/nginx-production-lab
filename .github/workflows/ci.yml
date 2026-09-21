@@ -46,7 +46,12 @@ jobs:
           docker compose up -d
 
       - name: Test API
-        run: curl --fail 127.0.0.1:8080/api/
+        run: |
+          for i in {1..15}; do
+            curl --fail 127.0.0.1:8080/api/ && exit 0
+            sleep 2
+          done
+          exit 1
 
       - name: Cleanup
         if: always()
