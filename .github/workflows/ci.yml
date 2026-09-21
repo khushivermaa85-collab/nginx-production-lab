@@ -20,3 +20,8 @@ jobs:
 
       - name: Build Docker images
         run: docker compose build
+
+      - name: Start services
+        run: |
+          docker network create devops-network
+          docker compose up -d
