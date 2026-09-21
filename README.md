@@ -49,3 +49,21 @@ docker compose ps
 ## Project Purpose
 
 This project demonstrates how multiple application services can be containerized and placed behind Nginx to create a reliable and maintainable web infrastructure.
+
+## CI/CD Pipeline
+
+This project uses GitHub Actions for continuous integration and Docker image publishing.
+
+### Pipeline Flow
+
+GitHub Push → Validate Compose → Build Images → Start Services → API Integration Test → Cleanup → Push Images to GHCR
+
+### CI/CD Features
+
+- GitHub Actions workflow
+- Docker Compose validation
+- Automated Docker image builds
+- Service startup for integration testing
+- API integration testing
+- Automatic cleanup after tests
+- Docker images published to GitHub Container Registry (GHCR)
