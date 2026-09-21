@@ -34,6 +34,12 @@ jobs:
       - name: Tag frontend image
         run: docker tag nginx-production-lab-frontend ghcr.io/${{ github.repository_owner }}/nginx-production-lab-frontend:latest
 
+      - name: Tag backend image
+        run: docker tag nginx-production-lab-backend ghcr.io/${{ github.repository_owner }}/nginx-production-lab-backend:latest
+
+      - name: Tag backend-2 image
+        run: docker tag nginx-production-lab-backend-2 ghcr.io/${{ github.repository_owner }}/nginx-production-lab-backend-2:latest
+
       - name: Start services
         run: |
           docker network create devops-network
