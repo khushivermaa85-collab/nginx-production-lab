@@ -28,3 +28,7 @@ jobs:
 
       - name: Test API
         run: curl --fail 127.0.0.1:8080/api/
+
+      - name: Cleanup
+        if: always()
+        run: docker compose down
