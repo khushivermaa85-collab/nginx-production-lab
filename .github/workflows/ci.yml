@@ -64,3 +64,9 @@ jobs:
 
       - name: Push backend-2 image
         run: docker push ghcr.io/${{ github.repository_owner }}/nginx-production-lab-backend-2:latest
+
+      - name: Deploy production stack
+        run: |
+          docker network create devops-network || true
+          docker compose -f docker-compose.prod.yml pull
+          docker compose -f docker-compose.prod.yml up -d
