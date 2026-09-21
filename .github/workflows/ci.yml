@@ -56,3 +56,11 @@ jobs:
       - name: Cleanup
         if: always()
         run: docker compose down
+      - name: Push frontend image
+        run: docker push ghcr.io/${{ github.repository_owner }}/nginx-production-lab-frontend:latest
+
+      - name: Push backend image
+        run: docker push ghcr.io/${{ github.repository_owner }}/nginx-production-lab-backend:latest
+
+      - name: Push backend-2 image
+        run: docker push ghcr.io/${{ github.repository_owner }}/nginx-production-lab-backend-2:latest
